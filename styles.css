@@ -2,53 +2,49 @@
 
 body {
     font-family: 'Montserrat', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(120deg, #a4508b 0%, #5f0a87 50%, #2f0743 100%);
+    background: #fff;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     overflow-x: hidden;
-    color: #fff;
+    color: #1a2233;
 }
 
-h1, label, .product-form label, .products-table th, .products-table td, nav ul li a, a {
-    color: #fff !important;
+:root {
+    --azul: #2563eb;
+    --azul-oscuro: #1e40af;
+    --lila: #a4508b;
+    --lila-claro: #f7e1ff;
+    --gris-azul: #eaf1fb;
+    --gris-borde: #e3eafc;
 }
 
 .container {
-    max-width: 700px;
-    margin: 56px auto;
-    background: rgba(255, 255, 255, 0.18);
-    padding: 48px 32px;
+    max-width: 1100px;
+    margin: 48px auto;
+    background: #fff;
+    padding: 40px 24px;
     border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(90, 24, 154, 0.18), 0 1.5px 8px rgba(164, 80, 139, 0.10);
-    backdrop-filter: blur(12px);
-    border: 1.5px solid rgba(164, 80, 139, 0.18);
+    box-shadow: 0 8px 32px rgba(30, 64, 175, 0.08), 0 1.5px 8px rgba(164, 80, 139, 0.06);
+    border: 1.5px solid var(--gris-borde);
     position: relative;
     overflow: hidden;
-}
-
-.container::before {
-    content: '';
-    position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(circle, #a4508b 0%, #5f0a87 80%, transparent 100%);
-    opacity: 0.18;
-    z-index: 0;
+    transition: box-shadow 0.3s;
 }
 
 h1 {
     text-align: center;
-    color: #5f0a87;
+    color: var(--azul-oscuro);
     margin-bottom: 36px;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     letter-spacing: 1.5px;
-    font-weight: 700;
-    text-shadow: 0 2px 8px rgba(90, 24, 154, 0.10);
+    font-weight: 800;
+    text-shadow: 0 2px 8px var(--lila-claro);
     position: relative;
     z-index: 1;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
 }
 
 nav ul {
@@ -62,18 +58,18 @@ nav ul {
     z-index: 1;
 }
 
-nav ul li a {
+nav ul li a, a {
     text-decoration: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.15rem;
-    padding: 10px 28px;
-    border-radius: 12px;
-    background: linear-gradient(90deg, #a4508b 0%, #5f0a87 100%);
-    box-shadow: 0 2px 12px rgba(164, 80, 139, 0.13);
-    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    color: var(--azul-oscuro) !important;
+    font-weight: 600;
+    font-size: 1.18rem;
+    padding: 8px 20px;
+    border-radius: 10px;
+    background: var(--gris-azul);
+    box-shadow: 0 1px 4px var(--gris-borde);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     border: none;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
     position: relative;
     overflow: hidden;
 }
@@ -88,63 +84,64 @@ nav ul li a::after {
     z-index: -1;
 }
 
-nav ul li a:hover {
-    background: linear-gradient(90deg, #fff 0%, #a4508b 100%);
-    color: #5f0a87;
-    transform: translateY(-3px) scale(1.05) rotate(-1deg);
-    box-shadow: 0 6px 24px rgba(90, 24, 154, 0.18);
+nav ul li a:hover, a:hover {
+    background: var(--lila);
+    color: #fff !important;
+    box-shadow: 0 4px 16px var(--lila);
 }
 
 .product-form {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 26px;
     position: relative;
     z-index: 1;
 }
 
 .product-form label {
     font-weight: 700;
-    color: #a4508b;
+    color: #1a2233;
     margin-bottom: 4px;
-    letter-spacing: 0.5px;
-    font-size: 1.05rem;
+    letter-spacing: 0.7px;
+    font-size: 1.08rem;
 }
 
 .product-form input[type="text"],
 .product-form input[type="number"],
 .product-form textarea,
 .product-form select {
-    padding: 12px;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    font-size: 1.05rem;
-    background: rgba(247, 225, 255, 0.18);
-    color: #fff;
+    padding: 14px;
+    border: 2.5px solid #fff;
+    border-radius: 12px;
+    font-size: 1.08rem;
+    background: rgba(247, 225, 255, 0.22);
+    color: #1a2233;
     outline: none;
-    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
     font-family: inherit;
+    box-shadow: 0 1.5px 8px rgba(164, 80, 139, 0.10);
 }
 
 .product-form input[type="text"]:focus,
 .product-form input[type="number"]:focus,
 .product-form textarea:focus,
 .product-form select:focus {
-    border: 2.5px solid #5f0a87;
-    box-shadow: 0 0 0 3px #e1c6f7;
+    border: 2.5px solid var(--azul-oscuro);
+    box-shadow: 0 0 0 4px var(--gris-azul);
     background: #fff;
+    color: #1a2233;
 }
 
 .product-form input[type="text"]::placeholder,
 .product-form input[type="number"]::placeholder,
 .product-form textarea::placeholder {
-    color: #e1c6f7;
+    color: #888;
     opacity: 1;
 }
 
 .product-form textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 90px;
 }
 
 .product-form input[type="file"] {
@@ -159,16 +156,16 @@ nav ul li a:hover {
     background: linear-gradient(90deg, #a4508b 0%, #5f0a87 100%);
     color: #fff;
     border: none;
-    padding: 16px;
-    border-radius: 12px;
-    font-size: 1.15rem;
-    font-weight: 700;
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 1.18rem;
+    font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 2px 12px rgba(90, 24, 154, 0.13);
-    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-    letter-spacing: 0.7px;
+    box-shadow: 0 2px 16px rgba(90, 24, 154, 0.18);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s, color 0.18s;
+    letter-spacing: 0.8px;
     font-family: inherit;
-    margin-top: 8px;
+    margin-top: 10px;
     position: relative;
     overflow: hidden;
 }
@@ -176,89 +173,111 @@ nav ul li a:hover {
 .product-form button:hover {
     background: linear-gradient(90deg, #fff 0%, #a4508b 100%);
     color: #5f0a87;
-    box-shadow: 0 6px 24px rgba(90, 24, 154, 0.18);
-    transform: translateY(-2px) scale(1.04) rotate(1deg);
+    box-shadow: 0 10px 32px rgba(90, 24, 154, 0.22);
+    transform: translateY(-3px) scale(1.06) rotate(1deg);
+    filter: brightness(1.08);
 }
 
 a {
     display: inline-block;
     margin-top: 32px;
-    color: #fff;
+    color: #222 !important;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
-    transition: color 0.2s, transform 0.15s;
-    letter-spacing: 0.5px;
+    font-size: 1.13rem;
+    transition: color 0.2s, background 0.2s, transform 0.15s;
+    letter-spacing: 0.6px;
     position: relative;
     z-index: 1;
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 8px 20px;
+    box-shadow: 0 1px 4px #ececec;
 }
-
 a:hover {
-    color: #fff;
-    text-shadow: 0 2px 8px #a4508b;
-    transform: scale(1.07) rotate(-2deg);
+    color: #fff !important;
+    background: #222;
+    text-shadow: none;
+    transform: scale(1.09) rotate(-2deg);
 }
 
-.products-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin-top: 36px;
-    background: rgba(247, 225, 255, 0.7);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(164, 80, 139, 0.13);
+/* Tarjetas de productos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+}
+.product-card {
+    background: linear-gradient(135deg, var(--gris-azul) 60%, var(--lila-claro) 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px var(--lila-claro), 0 1.5px 8px var(--gris-borde);
+    padding: 24px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.18s, background 0.2s;
+    border: 1.5px solid var(--gris-borde);
     position: relative;
-    z-index: 1;
 }
-
-.products-table th, .products-table td {
-    border: none;
-    padding: 18px 12px;
-    text-align: left;
-    color: #fff;
-    font-size: 1.05rem;
-    font-family: inherit;
+.product-card:hover {
+    box-shadow: 0 8px 32px var(--lila);
+    transform: translateY(-4px) scale(1.03);
+    background: linear-gradient(135deg, var(--lila-claro) 60%, var(--gris-azul) 100%);
 }
-
-.products-table th {
-    background: linear-gradient(90deg, #a4508b 0%, #5f0a87 100%);
-    color: #fff;
+.product-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px var(--lila-claro);
+    background: #fff;
+}
+.product-card .product-name {
+    font-size: 1.18rem;
     font-weight: 700;
-    letter-spacing: 0.7px;
-    font-size: 1.1rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 8px;
+    text-align: center;
+}
+.product-card .product-price {
+    font-size: 1.05rem;
+    color: var(--lila);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.product-card .product-desc {
+    font-size: 0.98rem;
+    color: #3b4861;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.product-card .product-status {
+    font-size: 0.93rem;
+    color: #fff;
+    font-weight: 600;
+    background: var(--lila);
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin-bottom: 0;
 }
 
-.products-table tbody tr {
-    transition: background 0.18s, transform 0.15s;
-}
-
-.products-table tbody tr:nth-child(even) {
-    background: #e1c6f7cc;
-}
-
-.products-table tbody tr:nth-child(odd) {
-    background: #f7e1ffcc;
-}
-
-.products-table tbody tr:hover {
-    background: #a4508b22;
-    transform: scale(1.01);
-}
+/* Elimino tabla de productos */
+.products-table { display: none !important; }
 
 @media (max-width: 800px) {
     .container {
         max-width: 98vw;
-        padding: 18px 2vw;
+        padding: 12px 2vw;
     }
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
-    .products-table th, .products-table td {
-        padding: 10px 4px;
-        font-size: 0.98rem;
-    }
-    nav ul {
+    .products-grid {
         gap: 16px;
+    }
+    .product-card {
+        padding: 14px 6px 10px 6px;
     }
 }
